@@ -7,6 +7,10 @@ public class UserProfile {
 	private String email;
 	private String password;
 
+	public UserProfile() {
+		
+	}
+	
 	/**
 	 * @return the userProfileId
 	 */

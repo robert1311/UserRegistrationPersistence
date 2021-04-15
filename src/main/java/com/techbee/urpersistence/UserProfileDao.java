@@ -1,5 +1,7 @@
 package com.techbee.urpersistence;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,14 +9,22 @@ import java.util.List;
 
 public class UserProfileDao {
 
+
+	/*final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+	final String DB_URL = "jdbc:mysql://userdb.czqmlpibq7qv.us-east-2.rds.amazonaws.com:3306/userdb";
+	final String USER = "admin";
+	final String PASS = "Mavs11ar";*/
 	
+	Connection conn = null;
 	ArrayList<UserProfile> users = new ArrayList<>();
 	int userId = 0;
 
 	public void addUser(UserProfile user) {
-		user.setUserProfileId(userId);
-		userId++;
-		users.add(user);
+		
+			/*user.setUserProfileId(userId);
+			userId++;
+			users.add(user);*/
+		
 	}
 
 	public UserProfile getUser(int userId) {

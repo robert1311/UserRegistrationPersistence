@@ -1,16 +1,21 @@
 package com.techbee.urpersistence;
 
+
 import java.util.List;
 import java.util.Scanner;
 
 
 
+
 public class UserRegistationFrontEnd {
 	static Scanner sc = new Scanner(System.in);
-	static UserProfileDao dao = new UserProfileDao();
+	static UserProfileDaoDB dao = new UserProfileDaoDB();
 
 	public static void main(String[] args) {
-
+		// TODO Auto-generated method stub
+	    
+		dao.makeConnection();
+		
 		boolean keepGoing = true;
 		int userOption;
 		do {
@@ -54,7 +59,7 @@ public class UserRegistationFrontEnd {
 		List<UserProfile> users = dao.getAllUsers();
 		for (UserProfile user : users) {
 			System.out.println(user.getUserProfileId() + ") " + user.getFirstName() + " " + user.getLastName() + "\n"
-					+ " - " + user.getEmail() + "\n -" + user.getPassword());
+					+ " - " + user.getEmail());
 		}
 	}
 
@@ -63,7 +68,7 @@ public class UserRegistationFrontEnd {
 		int id = sc.nextInt();
 		UserProfile user = dao.getUser(id);
 		System.out.println(user.getUserProfileId() + ") " + user.getFirstName() + " " + user.getLastName() + "\n"
-				+ " - " + user.getEmail() + "\n -" + user.getPassword());
+				+ " - " + user.getEmail());
 		return user;
 	}
 
